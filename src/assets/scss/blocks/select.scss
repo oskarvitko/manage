@@ -1,0 +1,106 @@
+.select {
+    width: 165px;
+
+    color: $grey-text;
+
+    font-size: 16px;
+
+    &.active .select__body {
+        height: 200px;
+    }
+
+    &.active .select__header::before {
+        transform: rotate(180deg);
+    }
+
+    &.active .select__bg {
+        display: block;
+    }
+
+    @include breakpoint($tablet-bp) {
+        width: 140px;
+    }
+}
+
+.select__header {
+    padding: 12px 40px 12px 20px;
+    border-radius: 2px;
+
+    background-color: $light-grey;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+
+    &::after {
+        content: "";
+        display: block;
+
+        width: 32px;
+        height: 32px;
+
+        border-radius: 2px;
+        background-color: $white;
+
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        z-index: 6;
+    }
+
+    &::before {
+        content: "\25BC";
+
+        color: $light-grey;
+
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 7;
+
+        transition: all .2s ease-in-out;
+
+    }
+}
+.select__body {
+    height: 0px;
+    overflow: hidden;
+    border-radius: 2px;
+
+    transition: height .2s ease;
+
+    position: relative;
+    z-index: 5;
+}
+
+.select__option {
+    padding: 12px 20px;
+
+    border-radius: 2px;
+    background-color: $white;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-grey;
+    }
+}
+
+.select__bg {
+    display: none;
+
+    font-size: 0;
+    opacity: 0;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+
+    width: 100%;
+    height: 100vh;
+}

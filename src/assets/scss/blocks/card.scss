@@ -1,0 +1,119 @@
+.card {
+    display: grid;
+    grid-template: 1fr auto 0 / 1fr;
+    grid-row: span 2;
+
+    background-color: $secondary;
+    border-radius: 2px;
+
+    box-shadow: 0 0 5px 1px #ccc;
+
+    position: relative;
+    cursor: pointer;
+    transition: background .2s ease;
+
+    &:hover .card__shroud {
+        opacity: 1;
+    }
+
+    &--short {
+        height: 175px;
+        grid-row: span 1;
+
+    }
+    &--short.passed {
+        background-color: $light-pink;
+    }
+
+    &--short:hover {
+        background-color: $pink;
+    }
+
+    &--short .card__time {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    @include breakpoint($mobile-bp) {
+        grid-row: span 1;
+    }
+}
+
+.card__shroud {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba($white, .7);
+
+    transition: opacity .3s ease;
+}
+
+.card__header {
+
+    h2 {
+        padding: 30px 20px;
+
+        color: $grey-text;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+
+        @include breakpoint($mobile-bp) {
+            height: 74%;
+        }
+    }
+}
+
+.card__content {
+    padding: 20px;
+
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+.card__title {
+    margin-bottom: 12px;
+
+    color: $grey-text;
+    font-size: 20px;
+}
+
+.card__date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__day {
+    display: block;
+
+    font-size: 16px;
+    color: $purple;
+}
+
+.card__time {
+    text-transform: uppercase;
+    color: $purple;
+    font-size: 16px;
+}
+
+.card__notes {
+    margin-top: 57px;
+
+    color: $grey-text;
+    font-size: 16px;
+}

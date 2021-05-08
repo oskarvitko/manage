@@ -1,0 +1,30 @@
+.filter {
+    background-color: $white;
+}
+
+.filter__inner {
+    padding: 40px 0;
+
+    display: grid;
+    grid-template: 1fr / auto auto 1fr;
+
+    grid-gap: 30px;
+
+    @include breakpoint($laptop-bp) {
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    @include breakpoint($tablet-bp) {
+        grid-template: repeat(2, auto) / 1fr 1fr;
+        justify-items: center;
+        gap: 20px 0;
+
+        padding: 20px 0 10px;
+    }
+
+    @include breakpoint ($mobile-bp) {
+        grid-template: repeat(3, auto) / 1fr;
+        justify-items: start;
+    }
+}

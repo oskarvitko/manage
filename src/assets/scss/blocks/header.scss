@@ -1,0 +1,12 @@
+.header {
+    background-color: $purple;
+}
+
+.header__inner {
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

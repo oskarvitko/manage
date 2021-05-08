@@ -1,0 +1,72 @@
+@import 'nullstyle';
+@import '_vars';
+@import '_mixins';
+
+body {
+    background-color: $primary;
+
+    font-size: 16px;
+    color: $white;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 24px;
+
+    max-width: 1189px;
+    width: 100%;
+
+    @include breakpoint($mobile-bp) {
+        padding: 0 15px;
+    }
+}
+
+.logo {
+    color: $white;
+    font-weight: 700;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+
+        width: 12px;
+        height: 12px;
+
+        background-color: $light-pink;
+        border-radius: 50%;
+
+        position: absolute;
+        top: 58%;
+        right: -19px;
+        z-index: 1;
+
+        transform: translateY(-42%);
+    }
+}
+
+.placeForFooter {
+    height: 100px;
+
+    @include breakpoint($mobile-bp) {
+        height: 54px;
+    }
+}
+
+
+@import 'blocks/header';
+@import 'blocks/nav';
+@import 'blocks/filter';
+@import 'blocks/date';
+@import 'blocks/plan';
+@import 'blocks/search';
+@import 'blocks/select';
+@import 'blocks/state';
+@import 'blocks/main';
+@import 'blocks/card';
+@import 'blocks/footer';
+@import 'blocks/social';

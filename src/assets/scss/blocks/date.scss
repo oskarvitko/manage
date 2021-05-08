@@ -1,0 +1,73 @@
+.date {
+    width: 263px;
+
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+.date__item {
+    padding: 9px 0;
+
+    position: relative;
+}
+
+.date__input {
+    display: none;
+
+    &:checked + .date__text::after {
+        opacity: 1;
+    }
+}
+
+.date__text {
+    color: $grey-text;
+    font-size: 16px;
+
+    position: relative;
+    left: 36px;
+
+    cursor: pointer;
+
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+
+        position: absolute;
+        top: 50%;
+
+        z-index: 1;
+
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        width: 13px;
+        height: 13px;
+
+        opacity: 0;
+
+        left: -33px;
+
+        background: url('../images/filter/okey-ico.svg') center no-repeat;
+        background-size: cover;
+
+        transition: opacity .2s ease-in-out;
+    }
+
+    &::before {
+        width: 20px;
+        height: 20px;
+
+        left: -36px;
+
+        border-radius: 2px;
+        background-color: #e7e7ea;
+
+        transition: background .2s ease;
+    }
+
+    &:hover::before {
+        background-color: $pink;
+    }
+}

@@ -1,0 +1,63 @@
+<div class="filter">
+    <div class="container">
+        <form class="filter__inner">
+
+            <div class="filter__date  date">
+                <div class="date__item">
+                    <input id="date-today" type="radio" class="date__input" value="today" name="date-radio">
+                    <label for="date-today" class="date__text">Today</label>
+                </div>
+                <div class="date__item">
+                    <input id="date-tomorrow" type="radio" class="date__input" value="tomorrow" name="date-radio">
+                    <label for="date-tomorrow" class="date__text">Tomorrow</label>
+                </div>
+                <div class="date__item">
+                    <input id="date-week" type="radio" class="date__input" value="week" name="date-radio">
+                    <label for="date-week" class="date__text">Week</label>
+                </div>
+                <div class="date__item">
+                    <input id="date-month" type="radio" class="date__input" value="month" name="date-radio">
+                    <label for="date-month" class="date__text">Month</label>
+                </div>
+            </div>
+
+            <div class="filter__plan  plan">
+
+                <div class="select" id="select">
+                    <div class="select__header" id="select-header">
+                        <div id="select-current" class="select__current"  data-value="all">All plans</div>
+                    </div>
+                    <div class="select__body">
+                        <div id="select-option" class="select__option"  data-value="all">All plans</div>
+                        <div id="select-option" class="select__option"  data-value="family">Family</div>
+                        <div id="select-option" class="select__option"  data-value="work">Work</div>
+                        <div id="select-option" class="select__option"  data-value="study">Study</div>
+                        <div id="select-option" class="select__option"  data-value="wish">Wish</div>
+                    </div>
+                    <div class="select__bg" id="select-bg">bg</div>
+                </div>
+
+
+                <div class="plan__state  state">
+                   <div class="state__inner">
+                        <div class="state__item">
+                            <input class="state__input" id="state-major" type="radio" name="state" value="major" checked>
+                            <label class="state__label" for="state-major" >Major</label>
+                        </div>
+                        <div class="state__item">
+                            <input class="state__input" id="state-minor" type="radio" name="state" value="major">
+                            <label class="state__label" for="state-minor" >Minor</label>
+                        </div>
+                   </div>
+                </div>
+            </div>
+
+            <div class="filter__search  search">
+                <div class="search__inner">
+                    <img id="search-ico" class="search__ico" src="assets/images/filter/search-ico.svg" alt="">
+                    <input id="search-input" type="text" class="search__input" placeholder="Search for plans">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
